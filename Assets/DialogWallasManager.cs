@@ -123,7 +123,7 @@ public class DialogWallasManager : MonoBehaviour
             }
             else if (lastDecision == 2)
             {
-                wellasText.text = "No?";
+                wellasText.text = "IM NOT PINK FLOYD!";
             }
             else
             {
@@ -156,7 +156,7 @@ public class DialogWallasManager : MonoBehaviour
         {
             if (lastDecision == 2)
             {
-                dionText.text = "See ya chump!";
+                dionText.text = "Yuh uh!";
                 dionText.gameObject.SetActive(true);
                 options.SetActive(false);
                 soundEffect.clip = new Random().Next(0, 1) == 1 ? neutralEnding : neutralEnding2;

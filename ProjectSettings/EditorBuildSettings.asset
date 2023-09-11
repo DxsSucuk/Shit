@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WELLONTHESEBALLS.unity
     guid: 287e9d844b91a894c93524b8857436d2
+  - enabled: 1
+    path: Assets/Scenes/CBT.unity
+    guid: bb2383895b45acc40b6e583b535e9d24
+  - enabled: 1
+    path: Assets/Scenes/SecretGamingShit.unity
+    guid: af9de928610147c42b678bb1d071e820
   m_configObjects: {}

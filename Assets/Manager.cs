@@ -32,6 +32,11 @@ public class Manager : MonoBehaviour
         // Application.Quit();
     }
 
+    public void TimeToFuck()
+    {
+        SceneManager.LoadScene("SecretGamingShit");
+    }
+
     public void FuckYou()
     {
         quitButton.transform.position = new Vector3(Random.Range(0, Screen.width), Random.Range(0, Screen.height));
@@ -48,6 +53,11 @@ public class Manager : MonoBehaviour
         SceneManager.LoadScene("WELLONTHESEBALLS");
     }
 
+    public void LoadMyBallsHAGOTHIM()
+    {
+        SceneManager.LoadScene("CBT");
+    }
+    
     public void SwitchCredits()
     {
         mainMenuGroup.SetActive(false);
