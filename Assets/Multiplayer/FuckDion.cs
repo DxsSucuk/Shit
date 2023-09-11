@@ -1,16 +1,19 @@
 ﻿using System;
+using Photon.Pun;
 using UnityEngine;
 
-public class FuckDion : MonoBehaviour
+public class FuckDion : MonoBehaviourPun
 {
     public GameObject normalUI;
     public GameObject jumpscare;
 
     private bool killyourself;
-    
-    private void OnTriggerEnter2D(Collider2D other)
+
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.CompareTag("Devil"))
+        if (!photonView.IsMine) return;
+        
+        if (other.gameObject.CompareTag("Devil"))
         {
             if (killyourself) return;
             
@@ -24,6 +27,6 @@ public class FuckDion : MonoBehaviour
 
     public void KYS()
     {
-        DionUtil.LoadEasterEgg(true);
+        Application.Quit();
     }
 }
