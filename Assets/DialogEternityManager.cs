@@ -150,7 +150,7 @@ public class DialogEternityManager : MonoBehaviour
                 soundEffect.Play();
                 disableInput = true;
                 hostageEndingObject.SetActive(true);
-                Invoke(nameof(KillYourself), 5);
+                DionUtil.setBlocker(true);
                 PlayerPrefs.SetInt("eternityEnding", 2);
                 PlayerPrefs.Save();
             } else if (lastDecision == 1)
