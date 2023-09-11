@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class Manager : MonoBehaviour
@@ -9,10 +10,21 @@ public class Manager : MonoBehaviour
     public GameObject mainMenuGroup;
     public GameObject creditMenuGroup;
 
+    public GameObject wallasObject;
+    public Sprite wallasBad;
+
     public void Awake()
     {
         mainMenuGroup.SetActive(true);
         creditMenuGroup.SetActive(false);
+
+        if (PlayerPrefs.GetInt("wellasEnding", 0) == 1)
+        {
+            Image image = wallasObject.GetComponent<Image>();
+            image.sprite = wallasBad;
+
+            wallasObject.GetComponent<Button>().interactable = false;
+        }
     }
 
     public void ShitFuckNo()
@@ -28,6 +40,12 @@ public class Manager : MonoBehaviour
     public void LoadNextShit()
     {
         SceneManager.LoadScene("TITTY_SHIT");
+    }
+
+
+    public void LoadMySuffering()
+    {
+        SceneManager.LoadScene("WELLONTHESEBALLS");
     }
 
     public void SwitchCredits()

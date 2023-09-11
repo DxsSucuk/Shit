@@ -875,7 +875,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 658603702}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 823309233}
+        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
+        m_MethodName: LoadNextShit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &658603702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1214,6 +1226,8 @@ MonoBehaviour:
   quitButton: {fileID: 2005874799}
   mainMenuGroup: {fileID: 1477722516}
   creditMenuGroup: {fileID: 104846305}
+  wallasObject: {fileID: 1865484200}
+  wallasBad: {fileID: 21300000, guid: d1fa10961eae3b840aae5a1a41cc0696, type: 3}
 --- !u!4 &823309234
 Transform:
   m_ObjectHideFlags: 0
@@ -2159,7 +2173,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1865484203}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 823309233}
+        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
+        m_MethodName: LoadMySuffering
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1865484203
 MonoBehaviour:
   m_ObjectHideFlags: 0

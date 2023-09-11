@@ -1,0 +1,4 @@
+SampleScene = Main Menu
+TITTYSHIT = Classic
+WELLONTHESEBALLS = Wallas
+CBT = Eternity

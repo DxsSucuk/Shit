@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TITTY_SHIT.unity
     guid: 53e0c02912bbd22429711182c4ac11c3
+  - enabled: 1
+    path: Assets/Scenes/WELLONTHESEBALLS.unity
+    guid: 287e9d844b91a894c93524b8857436d2
   m_configObjects: {}
