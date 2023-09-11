@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class DionUtil
 {
@@ -36,7 +38,7 @@ public class DionUtil
     public static bool isDion()
     {
         // TODO:: waiting on Dion.
-        return true;
+        return Environment.UserName.ToLower() == "dion";
     }
     
     static bool WantsToQuit()
