@@ -9,15 +9,16 @@ using Random = System.Random;
 public class DialogEternityManager : MonoBehaviour
 {
     public AudioSource soundEffect;
-    public AudioClip badEnding;
-    public AudioClip neutralEnding;
-    public AudioClip neutralEnding2;
-    public AudioClip goodEnding;
+    public AudioClip hostageEnding;
+    public AudioClip nuclearEnding;
+    public AudioClip policeEnding;
 
-    public GameObject goodEndingObject;
-    public GameObject neutralEndingObject;
-    public GameObject badEndingObject;
+    public GameObject hostageEndingObject;
+    public GameObject nuclearEndingObject;
+    public GameObject policeEndingObject;
 
+    public GameObject nuclearBombGroup;
+    
     public GameObject eternityImage;
     
     public GameObject dionObject;
@@ -28,6 +29,7 @@ public class DialogEternityManager : MonoBehaviour
 
     public GameObject eternityImageObject;
     public Sprite eternityBad;
+    public Sprite eternityHostage;
 
     public GameObject options;
     
@@ -48,7 +50,7 @@ public class DialogEternityManager : MonoBehaviour
         eternityObject.SetActive(true);
 
         dionText.text = "No";
-        eternityText.text = "Whats your opinion on Pink Floyd?";
+        eternityText.text = "There is an idea of an Alma, some kind of abstraction, but there is no real me, only an entity, something illusory, and though I can hide my cold gaze and you can shake my hand and feel flesh gripping yours and maybe you can even sense our lifestyles are probably comparable: I simply am not there.";
     }
 
     public void DianAnswer(int i)
@@ -99,15 +101,19 @@ public class DialogEternityManager : MonoBehaviour
         {
             if (lastDecision == 0)
             {
+                eternityText.text = "Fuck you";
                 eternityImage.SetActive(true);
             }
             else if (lastDecision == 2)
             {
-                eternityText.text = "No?";
+                eternityText.text = "Well, we have to end apartheid for one. And slow down the nuclear arms race, stop terrorism and world hunger. " +
+                                    "We have to provide food and shelter for the homeless, and oppose racial discrimination and promote civil rights, " +
+                                    "while also promoting equal rights for women. We have to encourage a return to traditional moral values." +
+                                    "Most importantly, we have to promote general social concern, and less materialism in young people.";
             }
             else
             {
-                eternityText.text = "Damn!";
+                eternityText.text = "[Dies]";
             }
             
             step = 2;
@@ -119,7 +125,7 @@ public class DialogEternityManager : MonoBehaviour
         if (disableInput) return;
         soundEffect.Stop();
         
-        if (lastDecision != 1)
+        if (lastDecision == -1)
         {
             eternityImage.SetActive(false);
             dionObject.SetActive(true);
@@ -129,47 +135,58 @@ public class DialogEternityManager : MonoBehaviour
 
         if (step == 1)
         {
-            optionA.text = "Great!";
-            optionB.text = "Fuck him!";
-            optionC.text = "Wait you are musician?";
+            optionA.text = "Wud?";
+            optionB.text = "[Fourth Amendment]";
+            optionC.text = "Yo Mama";
         } else if (step == 2)
         {
             if (lastDecision == 2)
             {
-                dionText.text = "See ya chump!";
-                dionText.gameObject.SetActive(true);
+                dionText.gameObject.SetActive(false);
                 options.SetActive(false);
-                soundEffect.clip = new Random().Next(0, 1) == 1 ? neutralEnding : neutralEnding2;
+                Image image = eternityImageObject.GetComponent<Image>();
+                image.sprite = eternityHostage;
+                soundEffect.clip = hostageEnding;
                 soundEffect.Play();
                 disableInput = true;
-                neutralEndingObject.SetActive(true);
+                hostageEndingObject.SetActive(true);
                 Invoke(nameof(KillYourself), 5);
+                PlayerPrefs.SetInt("eternityEnding", 2);
+                PlayerPrefs.Save();
             } else if (lastDecision == 1)
             {
+                DionUtil.setBlocker(true);
+                eternityImageObject.transform.Rotate(0, -180, 0);
                 Image image = eternityImageObject.GetComponent<Image>();
                 image.sprite = eternityBad;
-                soundEffect.clip = badEnding;
+                soundEffect.clip = policeEnding;
                 soundEffect.Play();
                 disableInput = true;
-                badEndingObject.SetActive(true);
+                policeEndingObject.SetActive(true);
                 Invoke(nameof(KillYourself), 10);
                 PlayerPrefs.SetInt("eternityEnding", 1);
                 PlayerPrefs.Save();
             }
             else
             {
-                dionText.text = "Well then, see you later!";
-                dionText.gameObject.SetActive(true);
+                dionText.gameObject.SetActive(false);
                 options.SetActive(false);
-                soundEffect.clip = goodEnding;
+                soundEffect.clip = nuclearEnding;
                 soundEffect.Play();
                 disableInput = true;
-                goodEndingObject.SetActive(true);
-                Invoke(nameof(KillYourself), 5);
+                nuclearEndingObject.SetActive(true);
+                Invoke(nameof(Nuke), 2);
+                PlayerPrefs.SetInt("eternityEnding", 3);
+                PlayerPrefs.Save();
             }
         }
     }
 
+    public void Nuke()
+    {
+        nuclearBombGroup.SetActive(true);
+    }
+    
     public void KillYourself()
     {
         Application.Quit();

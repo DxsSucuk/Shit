@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DionSpawn
   - OthersSpawn
+  - Devil
   layers:
   - Default
   - TransparentFX

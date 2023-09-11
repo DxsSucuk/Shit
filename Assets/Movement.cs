@@ -14,10 +14,6 @@ public class Movement : MonoBehaviourPun
 
     private void Awake()
     {
-        if (!photonView.IsMine)
-        {
-            gameObject.SetActive(false);
-        }
     }
 
     void Start ()
@@ -27,6 +23,8 @@ public class Movement : MonoBehaviourPun
 
     void Update()
     {
+        if (!photonView.IsMine) return;
+        
         // Gives a value between -1 and 1
         horizontal = Input.GetAxisRaw("Horizontal"); // -1 is left
         vertical = Input.GetAxisRaw("Vertical"); // -1 is down
@@ -41,6 +39,8 @@ public class Movement : MonoBehaviourPun
 
     void FixedUpdate()
     {
+        if (!photonView.IsMine) return;
+        
         body.velocity = moveDir * runSpeed * Time.deltaTime;
     }
 

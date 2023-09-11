@@ -2251,6 +2251,7 @@ MonoBehaviour:
   neutralEnding: {fileID: 8300000, guid: 24e34a17b5d8cd44b91f9b4b2046a70d, type: 3}
   neutralEnding2: {fileID: 8300000, guid: 0a8c69702b3883743a2872914ec647b2, type: 3}
   goodEnding: {fileID: 8300000, guid: f8f84bec61c8c26408396308f282da6f, type: 3}
+  notPinkFloyd: {fileID: 8300000, guid: 1255c2f0d60adc043a7936aba6c59429, type: 3}
   goodEndingObject: {fileID: 92105293}
   neutralEndingObject: {fileID: 1845444626}
   badEndingObject: {fileID: 947170999}

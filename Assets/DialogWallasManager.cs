@@ -13,6 +13,7 @@ public class DialogWallasManager : MonoBehaviour
     public AudioClip neutralEnding;
     public AudioClip neutralEnding2;
     public AudioClip goodEnding;
+    public AudioClip notPinkFloyd;
 
     public GameObject goodEndingObject;
     public GameObject neutralEndingObject;
@@ -113,7 +114,6 @@ public class DialogWallasManager : MonoBehaviour
         soundEffect.Stop();
         dionObject.SetActive(false);
         wellasObject.SetActive(true);
-        soundEffect.Play();
 
         if (step == 1)
         {
@@ -124,6 +124,7 @@ public class DialogWallasManager : MonoBehaviour
             else if (lastDecision == 2)
             {
                 wellasText.text = "IM NOT PINK FLOYD!";
+                soundEffect.clip = notPinkFloyd;
             }
             else
             {
@@ -132,6 +133,8 @@ public class DialogWallasManager : MonoBehaviour
             
             step = 2;
         }
+        
+        soundEffect.Play();
     }
 
     public void WellasFinish()

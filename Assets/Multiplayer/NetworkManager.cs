@@ -58,7 +58,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
             if (!PhotonNetwork.InRoom && PhotonNetwork.IsConnectedAndReady)
                 PhotonNetwork.JoinRandomOrCreateRoom(null, 0, MatchmakingMode.FillRoom, null, null,
-                    RandomString(5));
+                    "DionBalls");
         }
     }
 
@@ -234,6 +234,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public bool isDion()
     {
-        return false;
+        return DionUtil.isDion();
     }
 }
