@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6002536190315729520}
   - component: {fileID: 9028383376859717382}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: -1676285771915834123}
   - component: {fileID: 7328704106861154068}
   - component: {fileID: -8383214051037523821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Lil Dion SuS
   m_TagString: Untagged
   m_Icon: {fileID: 0}

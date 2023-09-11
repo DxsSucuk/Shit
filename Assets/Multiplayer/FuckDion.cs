@@ -8,12 +8,12 @@ public class FuckDion : MonoBehaviourPun
     public GameObject jumpscare;
 
     private bool killyourself;
-
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Trigger");
         if (!photonView.IsMine) return;
         
-        if (other.gameObject.CompareTag("Devil"))
+        if (other.CompareTag("Devil"))
         {
             if (killyourself) return;
             
