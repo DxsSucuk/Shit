@@ -38,6 +38,7 @@ public class DionUtil
     public static bool isDion()
     {
         // TODO:: waiting on Dion.
+        //return true;
         return Environment.UserName.ToLower() == "dion";
     }
     

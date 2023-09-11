@@ -26,6 +26,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public MiniMapFollower MinimapFollower;
 
+    public GameObject normalUI, jumpScare;
+
     public void Start()
     {
         if (string.IsNullOrWhiteSpace(PhotonNetwork.NickName))
@@ -203,6 +205,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             if (!isDion())
             {
                 mainCamera.orthographicSize = 10;
+            }
+            else
+            {
+                FuckDion fuckDion = playerGameObject.GetComponent<FuckDion>();
+                fuckDion.jumpscare = jumpScare;
+                fuckDion.normalUI = normalUI;
             }
         }
     }
