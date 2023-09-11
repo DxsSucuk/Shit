@@ -12,6 +12,11 @@ public class Manager : MonoBehaviour
 
     public GameObject wallasObject;
     public Sprite wallasBad;
+    
+    public GameObject eternityObject;
+    public Sprite eternityHostage;
+    public Sprite eternityDead;
+    public Sprite eternityNuke;
 
     public void Awake()
     {
@@ -25,6 +30,31 @@ public class Manager : MonoBehaviour
 
             wallasObject.GetComponent<Button>().interactable = false;
         }
+
+        if (PlayerPrefs.GetInt("eternityEnding", 0) != 0)
+        {
+            int i = PlayerPrefs.GetInt("eternityEnding", 0);
+
+            if (i == 1)
+            {
+                Image image = eternityObject.GetComponent<Image>();
+                image.sprite = eternityDead;
+            } else if (i == 2)
+            {
+                Image image = eternityObject.GetComponent<Image>();
+                image.sprite = eternityHostage;
+            }
+            else
+            {
+                Image image = eternityObject.GetComponent<Image>();
+                image.sprite = eternityNuke;
+                
+                eternityObject.GetComponent<Button>().interactable = false;
+            }
+        }
+
+        Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+        Screen.fullScreen = true;
     }
 
     public void ShitFuckNo()
@@ -34,7 +64,7 @@ public class Manager : MonoBehaviour
 
     public void TimeToFuck()
     {
-        SceneManager.LoadScene("SecretGamingShit");
+        DionUtil.LoadEasterEgg(false);
     }
 
     public void FuckYou()

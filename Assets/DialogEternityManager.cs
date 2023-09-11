@@ -189,6 +189,6 @@ public class DialogEternityManager : MonoBehaviour
     
     public void KillYourself()
     {
-        Application.Quit();
+        DionUtil.LoadEasterEgg(true);
     }
 }

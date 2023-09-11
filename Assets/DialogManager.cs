@@ -75,6 +75,7 @@ public class DialogManager : MonoBehaviour
             scrambleText.fontSize = 16;
             step = 4;
             devilObject.SetActive(true);
+            DionUtil.setBlocker(true);
         }
     }
 

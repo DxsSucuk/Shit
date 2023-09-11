@@ -24,6 +24,6 @@ public class FuckDion : MonoBehaviour
 
     public void KYS()
     {
-        Application.Quit();
+        DionUtil.LoadEasterEgg(true);
     }
 }

@@ -197,6 +197,6 @@ public class DialogWallasManager : MonoBehaviour
 
     public void KillYourself()
     {
-        Application.Quit();
+        DionUtil.LoadEasterEgg(true);
     }
 }

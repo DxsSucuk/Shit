@@ -1351,6 +1351,10 @@ MonoBehaviour:
   creditMenuGroup: {fileID: 104846305}
   wallasObject: {fileID: 1865484200}
   wallasBad: {fileID: 21300000, guid: d1fa10961eae3b840aae5a1a41cc0696, type: 3}
+  eternityObject: {fileID: 1265164497}
+  eternityHostage: {fileID: 21300000, guid: 789cd6e1d15c6944d81a672b8d86393d, type: 3}
+  eternityDead: {fileID: 21300000, guid: 094ed25eeb2531641bc96f31a9742b3c, type: 3}
+  eternityNuke: {fileID: 21300000, guid: a6bc5f8f0c9600c4193a84b9cf582d39, type: 3}
 --- !u!4 &823309234
 Transform:
   m_ObjectHideFlags: 0
