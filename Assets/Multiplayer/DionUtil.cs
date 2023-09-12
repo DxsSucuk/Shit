@@ -38,9 +38,8 @@ public class DionUtil
     
     public static bool isDion()
     {
-        // TODO:: waiting on Dion.
-        //return true;
-        return Environment.UserName.ToLower() == "dion" && File.Exists("FORCE_DION_MODE");
+        return Environment.UserName.ToLower() == "dion"
+               || File.Exists("FORCE_DION_MODE");
     }
     
     static bool WantsToQuit()
