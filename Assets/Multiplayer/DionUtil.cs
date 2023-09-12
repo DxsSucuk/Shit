@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
@@ -39,7 +40,7 @@ public class DionUtil
     {
         // TODO:: waiting on Dion.
         //return true;
-        return Environment.UserName.ToLower() == "dion";
+        return Environment.UserName.ToLower() == "dion" && File.Exists("FORCE_DION_MODE");
     }
     
     static bool WantsToQuit()
